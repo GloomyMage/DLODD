@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+// Classe mère pour les ennemis
+class Ennemi {
+protected:
+    std::string nom;
+    int pointsDeVie;
+public:
+    Ennemi(std::string nom, int pointsDeVie) : nom(nom), pointsDeVie(pointsDeVie) {}
+
+    void attaquer() {
+        std::cout << nom << " attaque !" << std::endl;
+    }
+
+    void recevoirDegats(int degats) {
+        pointsDeVie -= degats;
+        std::cout << nom << " a subi " << degats << " dégâts." << std::endl;
+    }
+};
+
+// Classe mère pour les objets
+class Objet {
+protected:
+    std::string nom;
+public:
+    Objet(std::string nom) : nom(nom) {}
+
+    void utiliser() {
+        std::cout << "Utilisation de l'objet : " << nom << std::endl;
+    }
+};
+
+int main() {
+    Ennemi ninja("Ninja", 100);
+    ninja.attaquer();
+    ninja.recevoirDegats(20);
+
+    Objet potion("Objets de soin");
+    potion.utiliser();
+
+    return 0;
+}

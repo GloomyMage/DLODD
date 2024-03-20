@@ -23,7 +23,7 @@ public:
 
 int main() {
     // Création d'un joueur
-    Joueur joueur1("Takeshi", 100);
+    Joueur joueur1("Takeshi", 50);
 
     // Affichage des informations du joueur
     joueur1.afficherInfos();

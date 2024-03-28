@@ -37,7 +37,7 @@ void Pause() {
 
 
 // --------------------------------------------------------------------
-// -------------------------- COMBAT -----------------------------------
+// -------------------------- COMBAT ----------------------------------
 
 void Combat(string mob) {
 	Pause();
@@ -92,7 +92,26 @@ void Choix2(bool choix) {
 
 		cout << "Malgre son agilite, le ninja ne trouve pas d autres passages," << endl << "sauf la porte principale, mais il se fera facilement reperer" << endl << "alors il decide de passer par-dessus le mur." << endl << endl;
 		Pause();
+		cout << endl << endl;
 	}
+}
+
+void Choix3(bool choix) {
+	system("CLS");
+	if (!choix) {
+		cout << "Il emprunte le chemin de droite et tombe sur la salle a manger, " << endl << "mais quelques samourais sont presents puisque bientot sonne l heure du repas." << endl << endl;
+		Combat("Samumu_Faible");
+		cout << "Le combat termine, Takeshi recupere la nourriture presente sur la table. ";
+		cout << yellow_on << "+1 Onigiri +1 Mochi" << all_off << endl << endl;
+	}
+	else {
+		cout << "Il emprunte le chemin de gauche et se retrouve face a une salle gardee. ";
+		Combat("Samumu_Moyen");
+		cout << "Le combat termine, il penetre dans la salle qui se retrouve etre remplie d armes et prend le nunchaku. ";
+		cout << yellow_on << "+1 Nunchaku" << all_off << endl << endl;
+	}
+	Pause();
+	system("CLS");
 }
 
 // ---------------------- Storyline ---------------------------------
@@ -123,13 +142,27 @@ void Histoire() {
 	Choix2(choix);
 
 	cout << "Apres avoir grimper rapidement le mur, le ninja se retrouve dans la cour interieure. " << endl << endl;
-	cout << "Arrivant a eviter tous les ennemis sur son chemin," << endl << "il traverse la cour interieure et se retrouve derriere le palais." << endl;
+	cout << "Arrivant a eviter tous les ennemis sur son chemin," << endl << "il traverse la cour interieure et se retrouve derriere le palais." << endl << endl;
 
 	Pause();
 	system("CLS");
 
-	cout << "Une fenetre est ouverte et le ninja s y infiltre " << endl << "se retrouvant dans la cuisine. Il y trouve de la nourriture " << endl << "et s en delecte. ";
+	cout << "Une fenetre est ouverte et le ninja s y infiltre se retrouvant dans la cuisine. " << endl << "Il y trouve de la nourriture et s en delecte. ";
 	cout << yellow_on << "+2 Mochi +1 Ramen" << all_off << endl << endl;
+
+	Pause();
+
+	cout << endl << endl << "Continuant son infiltration, il sort de la piece, mais tombe nez-a-nez avec un" << red_on << " samourai." << all_off << endl << endl;
+
+	Combat("Samumu_Moyen");
+
+	cout << "Apres l’avoir tue, Takeshi recupere la lance du defunt. " << endl << endl;
+	cout << "A pas de loup, le ninja continue son periple a travers le couloir qui l emmene vers deux chemins differents. " << endl;
+	cout << blue2_on << "Droite " << all_off << "ou " << blue2_on << "gauche" << all_off << " ?" << endl;
+	cout << endl << blue_on << "[Entrez (0) pour la premiere option et (1) pour la seconde option.] " << all_off;
+	cin >> choix;
+
+	Choix3(choix);
 
 }
 

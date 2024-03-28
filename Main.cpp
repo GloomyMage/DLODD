@@ -27,13 +27,20 @@ ostream& all_off(ostream& os)
 {
 	return os << "\033[0m";
 }
+
 // --------------------------------------------------------------------
+// -------------------------- COMBAT -----------------------------------
 
 void Combat(string mob) {
 	system("PAUSE");
 	system("CLS");
 	cout << red_on << "Combat " << mob << all_off << endl << endl;
 }
+
+// --------------------------------------------------------------------
+// ------------------------ HISTOIRE ----------------------------------
+// 
+// ------------------------- Choix ------------------------------------
 
 void Choix1(bool choix) {
 	system("CLS");
@@ -52,6 +59,8 @@ void Choix1(bool choix) {
 	}
 	system("PAUSE");
 }
+
+// ---------------------- Storyline ---------------------------------
 
 void Histoire() {
 
@@ -73,11 +82,24 @@ void Histoire() {
 	Combat("Samumu_Faible");
 }
 
+
+// --------------------------------------------------------------------
+// -------------------------- MAIN ------------------------------------
+
 int main() {
-	srand(static_cast<unsigned int>(time(nullptr)));
+	// VARIABLES
 
-	cout << "Hello world";
 
+	srand(static_cast<unsigned int>(time(nullptr))); // To ramdomize rand()
+
+
+	// MAIN SCREEN
+	cout << blue_on << " +++++++++++" << endl << endl;
+	cout << " DANS L OMBRE DU DAIMIO" << endl << endl;
+	cout << " +++++++++++" << all_off << endl << endl;
+	system("PAUSE");
+
+	// START
 	Histoire();
 
 	return 0;

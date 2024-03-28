@@ -6,8 +6,9 @@ class Ennemi {
 protected:
     std::string nom;
     int pointsDeVie;
+    int pointsDAttack;
 public:
-    Ennemi(std::string nom, int pointsDeVie) : nom(nom), pointsDeVie(pointsDeVie) {}
+    Ennemi(std::string nom, int pointsDeVie, int pointsDAttack) : nom(nom), pointsDeVie(pointsDeVie), pointsDAttack(pointsDAttack) {}
 
     void attaquer() {
         std::cout << nom << " attaque !" << std::endl;
@@ -15,7 +16,7 @@ public:
 
     void recevoirDegats(int degats) {
         pointsDeVie -= degats;
-        std::cout << nom << " a subi " << degats << " dégâts." << std::endl;
+        std::cout << nom << " a subi " << degats << " degats." << std::endl;
     }
 };
 
@@ -32,7 +33,7 @@ public:
 };
 
 int main() {
-    Ennemi ninja("Ninja", 100);
+    Ennemi ninja("Fred", 100);
     ninja.attaquer();
     ninja.recevoirDegats(20);
 

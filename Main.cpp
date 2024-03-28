@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <windows.h>
+#include <ctime>
 
 using namespace std;
 
@@ -53,6 +54,7 @@ void Choix1(bool choix) {
 }
 
 void Histoire() {
+
 	bool choix;
 	system("CLS");
 	cout << blue_on << "Dans l ombre des montagnes japonaises de la periode Sengoku, un ninja solitaire, nomme Takeshi, recoit une mission perilleuse :" << endl;
@@ -72,6 +74,8 @@ void Histoire() {
 }
 
 int main() {
+	srand(static_cast<unsigned int>(time(nullptr)));
+
 	cout << "Hello world";
 
 	Histoire();

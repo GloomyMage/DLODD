@@ -1,10 +1,23 @@
 #include "Objets.h"
 
+Objets::Objets()
+{
+}
+
+Objets::Objets(int a, int r)
+{
+}
+
 Objets::~Objets()
 {
 }
 
-int Objets::getGainPv()
+int Objets::getGainPV()
+{
+    return 0;
+}
+
+int Objets::getGainPV()
 {
     return GainPV;
 }
@@ -34,6 +47,10 @@ void Objets::setResistance(int r)
     Resistance = r;
 }
 
+void Objets::utiliser()
+{
+}
+
 class ObjetsDeSoin : public Objets
 {
 private:
@@ -48,7 +65,7 @@ public:
     int getGainAttaque();
 
     void utiliser() {
-        std::cout << "Utilisation de l'objet : " << nom << std::endl;
+
     }
 };
 
@@ -70,3 +87,31 @@ public:
         Resistance--; // enlève -1 à chaque tour 
     }
 };
+
+ObjetsDeSoin::ObjetsDeSoin()
+{
+}
+
+int ObjetsDeSoin::getGainPV()
+{
+    return 0;
+}
+
+int ObjetsDeSoin::getGainAttaque()
+{
+    return 0;
+}
+
+ObjetsDattaque::ObjetsDattaque()
+{
+}
+
+int ObjetsDattaque::getAttaque()
+{
+    return 0;
+}
+
+int ObjetsDattaque::getResistance()
+{
+    return 0;
+}

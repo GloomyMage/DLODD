@@ -3,14 +3,14 @@
 Daimio::~Daimio()
 {
 }
-int Daimio::getRegenerer()
+int Daimio::getRegenPV()
 {
-    return Regenerer;
+    return RegenPV;
 }
 
-void Daimio::setRegenerer(int R)
+void Daimio::setRegenPV(int R)
 {
-    Regenerer = R;
+    RegenPV = R;
 }
 
 
@@ -19,7 +19,7 @@ void Daimio::setRegenerer(int R)
 class Daimio : public Ennemi
 {
 private:
-    int Regenerer;
+    int RegenPV;
 
 public:
     Daimio() : Ennemi("Daimio", 40), attaque(20) {}
@@ -34,7 +34,7 @@ public:
         std::cout << "Daimio inflige " << attaque << " points de dégâts !" << std::endl;
     }
 
-    void Regenerer() {
+    void RegenPV() {
         pointsDeVie += 5;
         if (pointsDeVie > 40) {
             pointsDeVie = 40;

@@ -4,7 +4,7 @@ class Daimio
 {
 private:
 
-    int Regenerer;
+    int RegenPV;
 
 public:
 
@@ -12,8 +12,8 @@ public:
     Daimio(int R);
     ~Daimio();
 
-    int getRegenerer();
-    void setRegenerer(int R); // régénration chaque tour 
+    int getRegenPV();
+    void setRegenPV(int R); // régénration chaque tour 
 
     void Attaquer();
 };

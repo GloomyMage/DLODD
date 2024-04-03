@@ -14,13 +14,9 @@ Objets::~Objets()
 
 int Objets::getGainPV()
 {
-    return 0;
-}
-
-int Objets::getGainPV()
-{
     return GainPV;
 }
+
 
 int Objets::getGainAttaque()
 {
